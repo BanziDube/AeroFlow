@@ -16,6 +16,7 @@ namespace Domain.Entities
         public decimal TotalAirframeHours { get; set; } 
         public int Status { get; set; } // 0: Active 1: Maintenance
 
-       // public List<Component> Components { get; set; } = new();
+        public List<Component> Components { get; set; } = new();
+        public List<FlightLog> FlightLogs { get; set; } = new();
     }
 }
