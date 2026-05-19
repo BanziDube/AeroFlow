@@ -14,5 +14,8 @@ namespace Domain.Entities
         public string PartType { get; set; } = string.Empty;
         public decimal TotalComponentHours { get; set; }
         public decimal MaximumHoursBeforeService { get; set; }
+
+        public Aircraft? Aircraft { get; set; }
+        public List<MaintenanceEvent> MaintenanceEvents { get; set; } = new();
     }
 }

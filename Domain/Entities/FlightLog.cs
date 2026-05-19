@@ -14,5 +14,7 @@ namespace Domain.Entities
         public string ArrivalAirport { get; set; } = string.Empty;
         public decimal FlightDuration { get; set; }
         public DateTime TimeStamp { get; set; }
+
+        public Aircraft Aircraft { get; set; }
     }
 }

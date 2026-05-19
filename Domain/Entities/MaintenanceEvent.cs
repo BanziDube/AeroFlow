@@ -13,5 +13,7 @@ namespace Domain.Entities
         public string WorkOrderNumber {  get; set; } = string.Empty;
         public DateTime CompletionDate { get; set; }
         public string MechanicLicense { get; set; } = string.Empty;
+
+        public Component Component { get; set; }
     }
 }
