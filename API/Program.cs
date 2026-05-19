@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Infrastructure.PersistenceFolder;
+
+
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 
@@ -6,6 +11,14 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<AeroFlowDbContext>(options =>
+options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DefaultConnection"),
+    b => b.MigrationsAssembly("Infrastructure"))); // Pointing Migrations to the API project
+
+
+
 
 var app = builder.Build();
 
